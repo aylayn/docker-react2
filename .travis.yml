@@ -6,3 +6,12 @@ before_install:
   - docker build -t aylayn/docker-react2 -f Dockerfile.dev .
 script:
   - docker run aylayn/docker-react2 npm run test -- --coverage
+deploy:
+  provider: elastikbeanstalk
+  region: us-east-1
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-608043688230"
+  bucket_path: "docker-react"
+  on:
+    branch: master
