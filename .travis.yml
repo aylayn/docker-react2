@@ -7,7 +7,7 @@ before_install:
 script:
   - docker run aylayn/docker-react2 npm run test -- --coverage
 deploy:
-  provider: elastikbeanstalk
+  provider: elasticbeanstalk
   region: us-east-1
   app: "docker-react"
   env: "DockerReact-env"
