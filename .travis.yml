@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t aylayn/docker-react2 -f Dockerfile.dev .
+script:
+  - docker run aylayn/docker-react2 npm run test -- --coverage
